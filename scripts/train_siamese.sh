@@ -1,7 +1,7 @@
 #!/bin/bash
 CURDIR=$(cd $(dirname $0); cd ..; pwd)
 export GLUE_DIR="/search/odin/guobk/vpa/Data_NLP/glue_data"
-export BERT_PREMODELS="/search/odin/guobk/vpa/BERT-flow"
+export BERT_PREMODELS="/search/odin/guobk/vpa/BERT-flow/bert_premodels"
 export BERT_DIR=${BERT_PREMODELS}/uncased_L-12_H-768_A-12
 
 if [[ $BERT_NAME == "large-wwm" ]];then
