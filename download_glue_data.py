@@ -129,12 +129,16 @@ def main(arguments):
     tasks = get_tasks(args.tasks)
 
     for task in tasks:
-        if task == 'MRPC':
-            format_mrpc(args.data_dir, args.path_to_mrpc)
-        elif task == 'diagnostic':
-            download_diagnostic(args.data_dir)
-        else:
-            download_and_extract(task, args.data_dir)
+        try:
+            if task == 'MRPC':
+                format_mrpc(args.data_dir, args.path_to_mrpc)
+            elif task == 'diagnostic':
+                download_diagnostic(args.data_dir)
+            else:
+                download_and_extract(task, args.data_dir)
+            print('download %s success'%task)
+        except:
+            print('download %s fail' % task)
 
 
 if __name__ == '__main__':
